@@ -1,0 +1,56 @@
+.progressbar {
+    display: flex;
+    width: 100vw;
+    padding: 0px;
+    z-index: 99;
+  }
+  .progressbar li {
+      list-style-type: none;
+      width: 14%;
+      float: left;
+      font-size: 12px;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      color:#4D4F5C;
+  }
+  .progressbar li:before {
+      width: 30px;
+      height: 30px;
+      content: "";
+      line-height: 30px;
+      display: block;
+      text-align: center;
+      margin: 0 auto 10px auto;
+      border-radius: 50%;
+      background-color:#fff;
+      border: 1px solid #DEDEDE;
+      position: relative;
+      z-index: 9;
+  }
+
+  .progressbar li.active:before{
+        background:url(../../../../assets/images/sucess-icon.svg);
+  }
+  .progressbar li:after {
+      width: 100%;
+      height: 2px;
+      content: '';
+      position: absolute;
+      background-color: #DEDEDE;
+      top: 15px;
+      left: -50%;
+      z-index: 0;
+  }
+  .progressbar li:first-child:after {
+      content: none;
+  }
+  .progressbar li.active {
+      color: #4AD991;
+  }
+  .progressbar li.active:before {
+      border-color: #4AD991;
+  }
+  .progressbar li.active + li:after {
+      background-color: #4AD991;
+  }

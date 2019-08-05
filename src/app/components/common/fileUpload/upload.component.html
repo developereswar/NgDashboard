@@ -1,0 +1,39 @@
+<div class="custom-card">
+    <div class="custom-card-header">
+        Status: Bonded M&S data uploaded by Gopal on 23-07-2019, 11:05 am
+        <a href="">view detailed process</a>
+    </div>
+    <div class="custom-card-body">
+        <app-ProgessBar></app-ProgessBar>
+    </div>
+</div>
+ 
+<div class="custom-card">
+    <div class="inventry_report">
+        <b>Upload R60 61 Bonded M&S</b>
+        <div *ngIf="inventroyCode" [ngClass]="(inventroyCode)?'inventry_report_success':'inventry_report_error'"  class="invetory_report_wrapper">
+            <div class="left">
+                <span class="heading">
+                        Inventory Transaction Report 
+                </span>
+                <span class="date">
+                        {{inventroyCode}}
+                </span>
+            </div>
+            <div class="right">
+                <img [src]='errImg'  width="35" height="35"/>
+            </div>
+        </div>
+       <div class="invetory_report_wrapper"  *ngIf="!inventroyCode">
+            <app-fileLoader></app-fileLoader>
+       </div>
+    </div>
+    <div class="upload-button">
+        <input class="file-input" title="" type="file" (change)="handlerUploadFile($event)"
+            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+    </div>
+    <div class="download-button">
+            <button  class="button btn_blue"> Start Process</button>
+        <button disabled class="button btn_blue">Download PRN</button>
+    </div>
+</div>
